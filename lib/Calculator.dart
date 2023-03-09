@@ -8,15 +8,22 @@ class Calculator extends StatelessWidget {
     final txtangka1 = TextEditingController();
     final txtangka2 = TextEditingController();
 
-    String hasilakhir = '';
+    int hasilakhir = 0;
+    int? sum;
     //String kurang = '';
+
+    void _setHasil(){
+      setState((){
+        hasilakhir = sum!;
+      });
+    }
 
     onTambah() {
       setState(() {
         var angka1 = int.parse(txtangka1.text);
         var angka2 = int.parse(txtangka2.text);
         var hasil = angka1 + angka2;
-        hasilakhir = hasil.toString();
+        //hasilakhir = hasil.toString();
       });
     };
 
@@ -25,7 +32,7 @@ class Calculator extends StatelessWidget {
         var angka1 = int.parse(txtangka1.text);
         var angka2 = int.parse(txtangka2.text);
         var hasil = angka1 - angka2;
-        hasilakhir = hasil.toString();
+        //hasilakhir = hasil.toString();
       });
     }
 
